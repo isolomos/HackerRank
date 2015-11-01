@@ -1,0 +1,40 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int t;
+    int N;
+    int K;
+    int temp = 0;
+    int vote = 0;
+    cin>>t;
+    for (int i = 0; i < t; i++)
+        {
+        cin>>N>>K;
+        temp = 0;
+        vote = 0;
+        for (int i = 0; i< N; i++)
+            {
+            cin>>temp;
+            if (temp <= 0)
+                {
+                vote +=1;
+            }
+        }
+        if (vote >= K)
+            {
+            cout<<"NO"<<'\n';
+        }
+        else
+            {
+            cout<<"YES"<<'\n';
+        }
+    }
+    return 0;
+}
