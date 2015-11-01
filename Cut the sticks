@@ -1,0 +1,37 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+	int N, a, min;
+	vector<int> s;
+	cin >> N;
+	while (N--)
+	{
+		cin >> a;
+		s.push_back(a);
+	}
+	cout << s.size() << '\n';
+	while (s.size() > 1) {
+        if ( adjacent_find( s.begin(), s.end(), not_equal_to<int>() ) == s.end() )
+{
+   break;
+}
+		min = *min_element(s.begin(), s.end());
+		for (auto it = s.begin(); it != s.end(); it++)
+		{
+			*it -= min;
+		}
+		s.erase(remove(s.begin(), s.end(), 0), s.end());
+		cout << s.size() << '\n';
+      if ( adjacent_find( s.begin(), s.end(), not_equal_to<int>() ) == s.end() )
+{
+   break;
+}
+	}
+	return 0;
+}
