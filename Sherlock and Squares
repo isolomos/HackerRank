@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <math.h>
+using namespace std;
+
+
+int main() {
+	int T;
+	cin >> T;
+	int a;
+	int b;
+	while (T--)
+	{
+		cin >> a >> b;
+		int count = 0;
+	    bool check = false;
+        int counter = 1;
+        while (!check)
+            {
+            if (((counter * counter) >= a) && ((counter * counter) <= b))
+                count += 1;
+            if ((counter * counter) >= b )
+                check = true;
+            counter += 1;
+        }
+		cout << count << '\n';
+	}
+	return 0;
+}
